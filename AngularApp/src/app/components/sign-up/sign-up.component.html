@@ -1,0 +1,59 @@
+<div class="sign_up">
+
+  <h3>Sign Up!</h3>
+
+  <div id="errors">
+    <div *ngIf="name.errors">
+      <p *ngIf="name.errors.required">Name Required</p>
+      <p *ngIf="name.errors.minlength">Name must have 3 or more characters</p>
+    </div>
+    <div *ngIf="email.errors">
+      <p *ngIf="email.errors.required">email Required</p>
+      <p *ngIf="email.errors.minlength">email must have 3 or more characters</p>
+    </div>
+    <div *ngIf="description.errors">
+      <p *ngIf="description.errors.required">Description Required</p>
+      <p *ngIf="description.errors.minlength">Description must have 3 or more characters</p>
+    </div>
+  </div>
+
+  <form action="" method="post">
+
+    <p>
+      <label for="name">Name</label>
+      <input 
+        type="text" 
+        name="name"
+        required
+        minlength="3" 
+        [(ngModel)]="newUser.name"
+        #name="ngModel"
+        >
+    </p>
+
+    <p>
+      <label for="email">Email</label>
+      <input 
+        type="email"
+        name="email"
+        required 
+        [(ngModel)]="newEmail.email"
+        #email="ngModel"
+        >
+    </p>
+
+    <p>
+      <label for="password">password</label>
+      <input 
+        type="password" 
+        name="password" 
+        required
+        minlength="8"
+        [(ngModel)]="newPassword.password"
+        #password="ngModel"
+      >
+    </p>
+
+  </form>
+
+</div>
